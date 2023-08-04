@@ -42,13 +42,18 @@ public class Tile extends Button {
         else {
             this.color = "green";
         }
+    }
 
-        if (piece != null) {
-        Image img = new Image(piece.getImagePath());
-        ImageView view = new ImageView(img);
-        view.setFitHeight(80);
-        view.setPreserveRatio(true);
-        this.setGraphic(view);
+    public void placeImage() {
+        if (this.piece != null) {
+            Image img = new Image(piece.getImagePath());
+            ImageView view = new ImageView(img);
+            view.setFitHeight(80);
+            view.setPreserveRatio(true);
+            this.setGraphic(view);
+        }
+        else {
+            this.setGraphic(null);
         }
     }
 
@@ -74,10 +79,6 @@ public class Tile extends Button {
 
     public void setPiece(Piece piece) {
         this.piece = piece;
-    }
-
-    public static void main(String[] args) {
-        
     }
 
 }
